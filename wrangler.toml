@@ -1,0 +1,5 @@
+[[d1_databases]]
+binding = "DB" # available in your Worker on env.DB
+database_name = "prod-d1-guestbook"
+database_id = "28fbea80-6aa9-44fa-9d38-ff8e92f42e28"
+preview_database_id = "DB"
