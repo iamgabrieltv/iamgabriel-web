@@ -1,7 +1,7 @@
 export const prerender = false;
 
 import { getD1, getUtcNow } from '$lib/server/db';
-import { and, desc, eq, isNotNull } from 'drizzle-orm';
+import { desc, eq, isNotNull } from 'drizzle-orm';
 import type { PageServerLoad, Actions } from './$types';
 import { guestbook } from '$lib/server/db/schema';
 import { fetchUser, type UserData } from '$lib/server/fetchUser';
