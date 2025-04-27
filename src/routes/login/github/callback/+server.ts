@@ -43,7 +43,8 @@ export const GET: RequestHandler = async (event) => {
 	}
 	const githubUserResponse = await fetch('https://api.github.com/user', {
 		headers: {
-			Authorization: `Bearer ${tokens.accessToken()}`
+			Authorization: `Bearer ${tokens.accessToken()}`,
+			'User-Agent': 'iamgabriel-web'
 		}
 	});
 	const githubUser = (await githubUserResponse.json()) as GitHubResponse;
@@ -51,7 +52,8 @@ export const GET: RequestHandler = async (event) => {
 
 	const githubEmailResponse = await fetch('https://api.github.com/user/emails', {
 		headers: {
-			Authorization: `Bearer ${tokens.accessToken()}`
+			Authorization: `Bearer ${tokens.accessToken()}`,
+			'User-Agent': 'iamgabriel-web'
 		}
 	});
 	const githubUserEmailArray = (await githubEmailResponse.json()) as GitHubEmail[];

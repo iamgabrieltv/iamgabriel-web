@@ -27,9 +27,11 @@ export async function fetchUser(user: string): Promise<UserData> {
 	const [provider, userId] = user.split(':');
 
 	if (provider === 'github') {
-		const data = await fetch(`https://api.github.com/user/${userId}`).then(
-			(res) => res.json() as Promise<GitHubResponse>
-		);
+		const data = await fetch(`https://api.github.com/user/${userId}`, {
+			headers: {
+				'User-Agent': 'iamgabriel-web'
+			}
+		}).then((res) => res.json() as Promise<GitHubResponse>);
 
 		return {
 			name: data.name ?? data.login,
