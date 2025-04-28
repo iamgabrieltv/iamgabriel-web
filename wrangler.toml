@@ -1,6 +1,3 @@
-name = "iamgabrieltv-de" # cloudflare project name doesnt match repo name
-pages_build_output_dir = ".svelte-kit/cloudflare"
-
 [[d1_databases]]
 binding = "DB" # available in your Worker on env.DB
 database_name = "prod-d1-guestbook"
