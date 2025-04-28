@@ -12,7 +12,7 @@
 <p>leave a message</p>
 
 {#if data.user}
-	<p class="mt-2 mb-1 text-sm">signed in as <span class="font-bold">{data.user?.name}</span></p>
+	<p class="mt-2 mb-1 text-sm">signed in as <span class="font-bold">{data.user!.name}</span></p>
 	<MessageForm />
 {:else}
 	<div class="flex flex-row">

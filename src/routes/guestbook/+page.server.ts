@@ -21,7 +21,7 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 		orderBy: desc(guestbook.createdAt)
 	});
 
-	const enrichedMessages = await Promise.all(
+	const enrichedMessages = Promise.all(
 		messages.map(async (message) => {
 			const userData = await fetchUser(message.user);
 			return {
@@ -38,12 +38,12 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 	}
 
 	return {
+		title: 'Guestbook',
 		messages: enrichedMessages,
 		user:
 			locals.user === null
 				? null
-				: { name: fetchedUser?.name, dbId: locals.user?.user, emailHash: locals.user?.emailHash },
-		title: 'Guestbook'
+				: { name: fetchedUser?.name, dbId: locals.user?.user, emailHash: locals.user?.emailHash }
 	};
 };
 
