@@ -1,3 +1,4 @@
+name = "iamgabriel-web"
 pages_build_output_dir = ".svelte-kit/cloudflare"
 
 [[d1_databases]]
