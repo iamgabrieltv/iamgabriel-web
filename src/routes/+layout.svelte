@@ -11,6 +11,17 @@
 
 <svelte:head>
 	<title>{path === '/' ? 'IamGabriel' : `IamGabriel • ${title}`}</title>
+	<meta name="description" content="Developer from Germany" />
+	<meta name="og:title" content="IamGabriel" />
+	<meta name="og:description" content="Hi! I'm Gabriel." />
+	<meta name="og:type" content="website" />
+	<meta name="og:url" content="https://iamgabriel.dev" />
+	<meta name="og:image" content="https://iamgabriel.dev/og.webp" />
+	<meta name="og:image:type" content="image/webp" />
+	<meta name="og:image:width" content="1200" />
+	<meta name="og:image:height" content="630" />
+	<meta name="og:image:alt" content="IamGabriel_" />
+	<meta name="theme-color" content="#05b805" />
 </svelte:head>
 
 <div class="flex h-screen w-screen flex-col px-2 py-5 md:items-center md:px-0 md:py-10">
