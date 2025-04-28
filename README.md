@@ -1,38 +1,15 @@
-# sv
+![IamGabriel_](https://iamgabriel.dev/og.png)
+![Technologies Used](https://skillicons.dev/icons?i=svelte,ts,tailwind,sqlite,cloudflare)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# [iamgabriel.dev](https://iamgabriel.dev/)
 
-## Creating a project
+My website, built with SvelteKit, Tailwind, Drizzle and Cloudflare D1. Hosted on Cloudflare Pages.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+# Local Development
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun i # install dependencies
+bun run dev # start dev server
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Then go to http://localhost:5173/
