@@ -4,6 +4,7 @@
 	import { page } from '$app/state';
 	const path = $derived(page.url.pathname);
 	const title = $derived(page.data.title);
+	import { blur } from 'svelte/transition';
 
 	let { children }: LayoutProps = $props();
 </script>
@@ -18,6 +19,10 @@
 			<a href="/" class="{path === '/' ? 'underlined' : ''} link">home</a>
 			<a href="/guestbook" class="{path === '/guestbook' ? 'underlined' : ''} link">guestbook</a>
 		</nav>
-		{@render children()}
+		{#key path}
+			<div transition:blur class="max-h-0">
+				{@render children()}
+			</div>
+		{/key}
 	</div>
 </div>
