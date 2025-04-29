@@ -36,7 +36,7 @@ export async function fetchUser(user: string): Promise<UserData> {
 		return {
 			name: data.name ?? data.login,
 			url: data.html_url,
-			avatar: data.avatar_url
+			avatar: `${data.avatar_url}&s=48`
 		};
 	}
 
