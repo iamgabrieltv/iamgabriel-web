@@ -1,7 +1,7 @@
 export const prerender = false;
 
 import { getD1, getUtcNow } from '$lib/server/db';
-import { desc, eq, isNotNull } from 'drizzle-orm';
+import { and, desc, eq, isNotNull, notLike } from 'drizzle-orm';
 import type { PageServerLoad, Actions } from './$types';
 import { guestbook } from '$lib/server/db/schema';
 import { fetchUser, type UserData } from '$lib/server/fetchUser';
@@ -17,7 +17,7 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 
 	const messages = await db.query.guestbook.findMany({
 		columns: { id: true, user: true, message: true },
-		where: isNotNull(guestbook.message),
+		where: and(isNotNull(guestbook.message), notLike(guestbook.message, '')),
 		orderBy: desc(guestbook.createdAt)
 	});
 
@@ -32,15 +32,22 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 	);
 
 	let fetchedUser: UserData | undefined;
+	let existingMessage;
 
 	if (locals.user !== null) {
 		fetchedUser = await fetchUser(locals.user.user);
+		const message = await db
+			.select({ message: guestbook.message })
+			.from(guestbook)
+			.where(eq(guestbook.id, locals.user.id))
+			.limit(1);
+		existingMessage = message?.[0].message;
 	}
 
 	return {
 		title: 'Guestbook',
 		messages: enrichedMessages,
-		user: locals.user ? null : { name: fetchedUser?.name }
+		user: locals.user ? { name: fetchedUser!.name, existingMessage } : null
 	};
 };
 

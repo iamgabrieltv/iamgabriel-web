@@ -1,11 +1,25 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+
+	interface Props {
+		existingMessage: string | null | undefined;
+	}
+
+	let { existingMessage }: Props = $props();
 </script>
 
 <form method="POST" class="flex w-1/2 flex-col gap-2">
 	<div class="flex flex-row">
-		<input type="text" placeholder="say something" name="message" class="border-b border-dotted" />
-		<button type="submit" class="link" formaction="?/post">post</button>
+		<input
+			type="text"
+			placeholder="say something"
+			name="message"
+			class="border-b border-dotted"
+			value={existingMessage}
+		/>
+		<button type="submit" class="link" formaction="?/post"
+			>{existingMessage ? 'edit' : 'post'}</button
+		>
 	</div>
 
 	<div class="flex flex-row gap-3">

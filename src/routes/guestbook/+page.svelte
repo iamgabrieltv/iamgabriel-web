@@ -13,7 +13,7 @@
 
 {#if data.user}
 	<p class="mt-2 mb-1 text-sm">signed in as <span class="font-bold">{data.user!.name}</span></p>
-	<MessageForm />
+	<MessageForm existingMessage={data.user.existingMessage} />
 {:else}
 	<div class="flex flex-row">
 		<SignInGitHub />
