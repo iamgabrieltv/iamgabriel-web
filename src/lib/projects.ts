@@ -35,5 +35,13 @@ export const projects: project[] = [
 		description: 'A mod for Lethal Company that allows you to buy a cat from the shop.',
 		url: 'https://thunderstore.io/c/lethal-company/p/IamGabriel/BuyableCat/',
 		repo: 'https://github.com/iamgabrieltv/BuyableCat'
+	},
+	{
+		id: 4,
+		title: 'IamBot',
+		image: '/assets/projects/iambot.webp',
+		description: '[ARCHIVE] One of my first JavaScript projects. A private discord.js bot.',
+		url: 'https://github.com/iamgabrieltv/IamBot',
+		repo: 'https://github.com/iamgabrieltv/IamBot'
 	}
 ];
