@@ -1,9 +1,5 @@
 import type { TransitionConfig } from 'svelte/transition';
 
-function isEven(input: number) {
-	return input % 2 === 0;
-}
-
 export function typewriter(node: Element, { speed = 1 } = {}): TransitionConfig {
 	const valid = node.childNodes.length === 1 && node.childNodes[0].nodeType === Node.TEXT_NODE;
 

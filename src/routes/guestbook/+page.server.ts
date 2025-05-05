@@ -40,10 +40,7 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 	return {
 		title: 'Guestbook',
 		messages: enrichedMessages,
-		user:
-			locals.user === null
-				? null
-				: { name: fetchedUser?.name, dbId: locals.user?.user, emailHash: locals.user?.emailHash }
+		user: locals.user ? null : { name: fetchedUser?.name }
 	};
 };
 
