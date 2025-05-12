@@ -31,23 +31,23 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 		})
 	);
 
-	let fetchedUser: UserData | undefined;
+	let fetchedUser: Promise<UserData>;
 	let existingMessage;
 
 	if (locals.user !== null) {
-		fetchedUser = await fetchUser(locals.user.user);
-		const message = await db
+		fetchedUser = fetchUser(locals.user.user);
+		const message = db
 			.select({ message: guestbook.message })
 			.from(guestbook)
 			.where(eq(guestbook.id, locals.user.id))
 			.limit(1);
-		existingMessage = message?.[0].message;
+		existingMessage = message.then((result) => result[0].message);
 	}
 
 	return {
 		title: 'Guestbook',
 		messages: enrichedMessages,
-		user: locals.user ? { name: fetchedUser!.name, existingMessage } : null
+		user: locals.user ? { name: fetchedUser!.then((user) => user.name), existingMessage } : null
 	};
 };
 
