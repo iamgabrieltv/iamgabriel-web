@@ -15,21 +15,23 @@ import {
 export const load: PageServerLoad = async ({ platform, locals }) => {
 	const db = getD1(platform!.env);
 
-	const messages = await db.query.guestbook.findMany({
-		columns: { id: true, user: true, message: true },
-		where: and(isNotNull(guestbook.message), notLike(guestbook.message, '')),
-		orderBy: desc(guestbook.createdAt)
-	});
-
-	const enrichedMessages = Promise.all(
-		messages.map(async (message) => {
-			const userData = await fetchUser(message.user);
-			return {
-				...message,
-				user: userData
-			};
+	const messages = db.query.guestbook
+		.findMany({
+			columns: { id: true, user: true, message: true },
+			where: and(isNotNull(guestbook.message), notLike(guestbook.message, '')),
+			orderBy: desc(guestbook.createdAt)
 		})
-	);
+		.then((messages) =>
+			Promise.all(
+				messages.map(async (message) => {
+					const userData = await fetchUser(message.user);
+					return {
+						...message,
+						user: userData
+					};
+				})
+			)
+		);
 
 	let fetchedUser: Promise<UserData>;
 	let existingMessage;
@@ -46,7 +48,7 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 
 	return {
 		title: 'Guestbook',
-		messages: enrichedMessages,
+		messages: messages,
 		user: locals.user ? { name: fetchedUser!.then((user) => user.name), existingMessage } : null
 	};
 };
