@@ -18,7 +18,7 @@
 				alt="{message.user.name}s Avatar"
 				class="mr-2 h-8 w-8 rounded-full"
 			/>
-			<p>{message.user.name}: {message.message}</p>
+			<p><a href={message.user.url} class="link">{message.user.name}</a>: {message.message}</p>
 		</div>
 	{/each}
 {/await}

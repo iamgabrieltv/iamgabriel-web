@@ -49,7 +49,13 @@ export const load: PageServerLoad = async ({ platform, locals }) => {
 	return {
 		title: 'Guestbook',
 		messages: messages,
-		user: locals.user ? { name: fetchedUser!.then((user) => user.name), existingMessage } : null
+		user: locals.user
+			? {
+					name: fetchedUser!.then((user) => user.name),
+					existingMessage,
+					url: fetchedUser!.then((user) => user.url)
+				}
+			: null
 	};
 };
 
