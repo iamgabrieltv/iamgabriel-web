@@ -38,6 +38,16 @@ export const projects: project[] = [
 	},
 	{
 		id: 4,
+		title: 'IamChat',
+		image: '/assets/projects/iamchat.webp',
+		description:
+			'My school banned discord, so I built my own chat app using PocketBase as backend and SvelteKit for frontend.',
+		descriptionShort: 'My school banned discord, so I built my own chat app.',
+		url: 'https://github.com/iamgabrieltv/IamChat',
+		repo: 'https://github.com/iamgabrieltv/IamChat'
+	},
+	{
+		id: 100,
 		title: 'IamBot',
 		image: '/assets/projects/iambot.webp',
 		description: '[ARCHIVE] One of my first JavaScript projects. A private discord.js bot.',
