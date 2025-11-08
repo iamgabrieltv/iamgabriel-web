@@ -1,5 +1,4 @@
 interface project {
-	id: number;
 	image: string;
 	title: string;
 	description: string;
@@ -10,7 +9,6 @@ interface project {
 
 export const projects: project[] = [
 	{
-		id: 1,
 		title: 'iamgabriel.dev',
 		image: '/og.png',
 		description:
@@ -20,7 +18,14 @@ export const projects: project[] = [
 		repo: 'https://github.com/iamgabrieltv/iamgabriel-web'
 	},
 	{
-		id: 2,
+		title: 'AAMRP',
+		image: '/assets/projects/aamrp.avif',
+		description: 'Animated Apple Music Rich Presence for Discord. Built with .NET',
+		descriptionShort: 'Animated Apple Music Rich Presence for Discord.',
+		url: 'https://github.com/iamgabrieltv/aamrp',
+		repo: 'https://github.com/iamgabrieltv/aamrp'
+	},
+	{
 		title: 'IamFaucet',
 		image: '/assets/projects/iamfaucet.webp',
 		description: 'Frontend for my Banano Cryptocurrency Faucet, built with SvelteKit and Tailwind.',
@@ -29,7 +34,6 @@ export const projects: project[] = [
 		repo: 'https://github.com/iamgabrieltv/iamfaucet'
 	},
 	{
-		id: 3,
 		title: 'BuyableCat',
 		image: 'https://gcdn.thunderstore.io/live/repository/icons/IamGabriel-BuyableCat-2.0.4.png',
 		description: 'A mod for Lethal Company that allows you to buy a cat from the shop.',
@@ -37,7 +41,6 @@ export const projects: project[] = [
 		repo: 'https://github.com/iamgabrieltv/BuyableCat'
 	},
 	{
-		id: 4,
 		title: 'IamChat',
 		image: '/assets/projects/iamchat.webp',
 		description:
@@ -47,7 +50,6 @@ export const projects: project[] = [
 		repo: 'https://github.com/iamgabrieltv/IamChat'
 	},
 	{
-		id: 100,
 		title: 'IamBot',
 		image: '/assets/projects/iambot.webp',
 		description: '[ARCHIVE] One of my first JavaScript projects. A private discord.js bot.',
