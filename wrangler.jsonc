@@ -9,7 +9,7 @@
 		"directory": ".svelte-kit/cloudflare"
 	},
 	"build": {
-		"command": "bun install && bun build"
+		"command": "bun install && bun run build"
 	},
 	"d1_databases": [
 		{
