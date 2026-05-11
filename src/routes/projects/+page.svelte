@@ -25,7 +25,7 @@
 			{#if project.icons}
 			<div class="flex flex-row items-center self-start gap-1 pb-2">
 				{#each project.icons as icon}
-					<iconify-icon icon={icon} class="text-3xl text-current" noobserver></iconify-icon>
+					<iconify-icon icon={icon} class="text-3xl text-current"></iconify-icon>
 				{/each}
 			</div>
 			{/if}

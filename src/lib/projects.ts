@@ -21,6 +21,7 @@ export const projects: project[] = [
 			'devicon-plain:svelte',
 			'mdi:tailwind',
 			'devicon-plain:typescript',
+			'lineicons:drizzle',
 			'devicon-plain:sqlite',
 			'devicon-plain:cloudflare'
 		]
