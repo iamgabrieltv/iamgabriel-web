@@ -18,5 +18,20 @@
 			"database_id": "28fbea80-6aa9-44fa-9d38-ff8e92f42e28",
 			"preview_database_id": "DB"
 		}
-	]
+	],
+	"observability": {
+		"enabled": false,
+		"head_sampling_rate": 1,
+		"logs": {
+			"enabled": true,
+			"head_sampling_rate": 1,
+			"persist": true,
+			"invocation_logs": true
+		},
+		"traces": {
+			"enabled": false,
+			"persist": true,
+			"head_sampling_rate": 1
+		}
+	}
 }
