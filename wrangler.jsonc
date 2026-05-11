@@ -18,12 +18,5 @@
 			"database_id": "28fbea80-6aa9-44fa-9d38-ff8e92f42e28",
 			"preview_database_id": "DB"
 		}
-	],
-	"vars": {
-		"CLOUDFLARE_ACCOUNT_ID": "4cab3932046a09b0ff01639eac5ba03d",
-		"CLOUDFLARE_DATABASE_ID": "28fbea80-6aa9-44fa-9d38-ff8e92f42e28",
-		"GITHUB_CLIENT_ID": "Ov23liyG0mE5ACAdwVKO",
-		"DISCORD_CLIENT_ID": "1364612441576570941",
-		"ORIGIN": "https://iamgabriel.dev"
-	}
+	]
 }
