@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { projects } from '$lib/projects';
-	import Icon from '@iconify/svelte';
+	import "iconify-icon";
 </script>
 
 <h1 class="text-2xl font-bold">projects</h1>
@@ -17,7 +17,7 @@
 				>
 				{#if project.repo}
 					<a href={project.repo} class="link flex flex-row items-center"
-						><Icon icon="mdi:github" class="text-current mr-1 text-2xl" />source</a
+						><iconify-icon icon="mdi:github" class="text-current mr-1 text-2xl"></iconify-icon>source</a
 					>
 				{/if}
 			</div>
@@ -25,7 +25,7 @@
 			{#if project.icons}
 			<div class="flex flex-row items-center self-start gap-1 pb-2">
 				{#each project.icons as icon}
-					<Icon icon={icon} class="text-3xl text-current" />
+					<iconify-icon icon={icon} class="text-3xl text-current" noobserver></iconify-icon>
 				{/each}
 			</div>
 			{/if}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Icon from '@iconify/svelte';
+	import "iconify-icon";
 
 	interface Props {
 		existingMessage: Promise<string | null> | undefined;
@@ -27,10 +27,10 @@
 
 		<div class="flex flex-row gap-3">
 			<button class="link flex flex-row items-center gap-1 text-sm" formaction="?/signout"
-				><Icon icon="prime:sign-out" />sign out</button
+				><iconify-icon icon="prime:sign-out"></iconify-icon> out</button
 			>
-			<button class="link flex flex-row items-center gap-1 text-sm" formaction="?/delete"
-				><Icon icon="tabler:trash" />delete</button
+			<button aria-label="Delete data" class="link flex flex-row items-center gap-1 text-sm" formaction="?/delete"
+				><iconify-icon icon="tabler:trash"></iconify-icon></button
 			>
 		</div>
 	</form>

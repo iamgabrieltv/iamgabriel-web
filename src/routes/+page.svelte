@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ProjectsSmall from '$lib/components/projectsSmall.svelte';
-	import Icon from '@iconify/svelte';
+	import "iconify-icon";
 	import { typewriter } from '$lib/customTransitions';
 	import { onMount, onDestroy } from 'svelte';
 
@@ -41,6 +41,6 @@
 	<ProjectsSmall />
 
 	<a href="/projects" class="link flex w-fit flex-row items-center gap-1 border-b"
-		>all projects<Icon icon="mdi:arrow-right" /></a
+		>all projects<iconify-icon icon="mdi:arrow-right"></iconify-icon></a
 	>
 </main>
